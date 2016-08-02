@@ -1,0 +1,33 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 01-Aug-2016, 09:58:38
+    Author     : dmuthami
+*/
+
+/*----------Theme Block----------------*/
+
+.teaser { text-align: center; }
+
+.teaser .separator-teaser, .teaser-as-list .separator-teaser { border-bottom: 2.5px solid rgb(254, 80, 0); 
+                                                               display: block; margin: 0px auto 16px; padding-top: 17px; width: 50px; }
+.container .row .col-md-4 .h2{ color: rgb(255,0,0);}
+
+.container .container .teaser h2 { 
+    color: rgb(93, 71, 119); 
+    font-family: "Raleway",sans-serif; 
+    font-size: 24pt;
+    font-weight: 300; 
+    margin-top: 40px; 
+    word-wrap: break-word; }
+
+.container .container .teaser p{
+    color: rgb(0, 0, 0); 
+    font-family: "Open Sans",sans-serif; 
+    font-size: 14pt; 
+    font-weight: 400; 
+    line-height: 24pt; }
+/*----------End of Theme Block-----color: rgb(128,71,119)-----------*/

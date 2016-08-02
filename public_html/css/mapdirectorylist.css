@@ -1,0 +1,86 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26-Jul-2016, 12:16:33
+    Author     : dmuthami
+*/
+
+#listView .search-results-title { width: 50%;}
+
+#listView .search-results-title { width: 50%; }
+
+.label { display: inline; padding: 0.2em 0.6em 0.3em; font-size: 75%; font-weight: 700; line-height: 1; color: rgb(255, 255, 255); text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: 0.25em; }
+.label:empty { display: none; }
+
+.label { font-family: Open Sans,sans-serif; display: inline-block; font-weight: 600; font-size: 10pt; line-height: 14pt; text-align: left; border-width: medium medium medium 4px; border-style: none none none solid; border-color: -moz-use-text-color -moz-use-text-color -moz-use-text-color rgb(239, 238, 237); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-radius: 0px; background-color: rgb(239, 238, 237); color: rgb(65, 64, 66); height: 25px; width: 100px; padding-left: 5px; }
+.label, h1 .label { vertical-align: middle; }
+.label-datasett { border-color: rgb(93, 71, 119); }
+#listView .search-results-action-buttons .btn { width: 130px; }
+.custom-icon { width: 25px; height: 25px; }
+.custom-icon, .custom-icon-sm { background-repeat: no-repeat; background-position: 50% center; display: inline-block; vertical-align: middle; }
+.btn .custom-icon { vertical-align: middle; width: 16pt; height: 16pt; }
+.disabled .custom-icon { cursor: not-allowed; }
+.custom-icon.custom-icon-info { background-image: url('../images/mapdirectory/info.svg'); }
+.btn .custom-icon.custom-icon-info { background-image: url('../images/mapdirectory/info-white.svg'); width: 10pt; height: 16pt; margin-left: -3px; }
+.custom-icon.custom-icon-kartmarkoer { background-image: url('../images/mapdirectory/kartmarkoer.svg'); }
+.btn .custom-icon.custom-icon-kartmarkoer { background-image: url('../images/mapdirectory/kartmarkoer-white.svg'); }
+.disabled .custom-icon.custom-icon-kartmarkoer { background-image: url('../images/mapdirectory/kartmarkoer-disabled.svg'); }
+.custom-icon.custom-icon-handlekurv { background-image: url('../images/mapdirectory/handlekurv.svg'); }
+.btn .custom-icon.custom-icon-handlekurv { background-image: url('../images/mapdirectory/handlekurv-white.svg'); }
+.custom-icon.custom-icon-lastned { background-image: url('../images/mapdirectory/lastned.svg'); }
+.btn .custom-icon.custom-icon-lastned { background-image: url('../images/mapdirectory/lastned-white.svg'); }
+.disabled .custom-icon.custom-icon-lastned { background-image: url('../images/mapdirectory/lastned-disabled.svg'); }
+.custom-icon.custom-icon-hengelaas-open-green { background-image: url('../images/mapdirectory/hengelaas-aapen-green.svg'); width: 30px; margin-right: -8px; }
+
+
+.btn, .col-actions .btn {
+    background-color: #7da1c4;
+    transition: all .35s linear 0s;
+    color: #fff;
+    border: none;
+    font-style: normal;
+}
+
+.btn {
+    font-family: Open Sans,sans-serif;
+    font-weight: 400;
+    font-size: 12pt;
+    margin-bottom: 7px;
+    border-radius: 0;
+    height: 34px;
+    line-height: 16pt;
+    
+    text-decoration: none;
+    
+    display: inline-block;
+    padding: 6px 12px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    background-image: none;
+
+}
+.btn:focus, .btn:hover, a.btn:focus, a.btn:hover { background-color: rgb(254, 80, 0); color: rgb(255, 255, 255) ! important; border: medium none; font-style: normal; font-size: 12pt; line-height: 16pt; }
+.btn:hover span, .btn span:hover { color: rgb(255, 255, 255) ! important; }
+.btn.disabled { background-color: rgb(255, 255, 255) ! important; color: rgb(207, 207, 207); border: 1px solid rgb(207, 207, 207); opacity: 1; cursor: not-allowed; }
+.btn.disabled:hover { color: rgb(207, 207, 207); }
+
+body {
+    font-size: 12pt;
+    font-family: Open Sans,sans-serif;
+    background-image: none;
+}
+
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+}

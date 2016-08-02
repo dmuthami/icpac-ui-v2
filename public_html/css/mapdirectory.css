@@ -1,0 +1,267 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22-Jul-2016, 08:45:32
+    Author     : dmuthami
+*/
+
+
+
+/*---------All------------*/
+
+.start-page-container *  { text-align: center; }
+
+/*---End of All--------------*/
+
+/*----------CSS for Header----------------*/
+.page-header {
+    margin: 0px 0px 0px 0px  !important;
+}
+.logo-wrapper { background-color: rgb(255, 255, 255); display: table; height: 50px; }
+.icpac-logo a img { height: auto; position: relative; width: 587px; }
+.icpac-logo { display: table-cell; vertical-align: middle; }
+.navbar-header { display: table; float: right; height: 50px; }
+.menu-toggle { display: table-cell; padding: 0px 4px; vertical-align: middle; }
+.navbar-toggle { border-radius: 0px; margin: 0px; padding: 0px; }
+.menu-title { color: rgb(65, 64, 66); display: none; font-family: "Raleway",sans-serif; 
+              font-size: 12pt; font-weight: 500; padding: 2px 4px 0px; text-transform:
+                  uppercase; vertical-align: middle; }
+.menu-toggle button .icon-bar { height: 5px; width: 30px; }
+.menu-toggle button.collapsed .icon-bar { background-color: rgb(150, 140, 131); }
+.menu-toggle button:not(.collapsed) .icon-bar { background-color: rgb(65, 64, 66); }
+.logo-description{ margin-top: 8px; }
+/*----------End of /*----------CSS for Header----------------*/
+
+/*----------CSS for Top Menu Section----------------*/
+
+.menu-separator { background-color: rgb(254, 80, 0); height: 1px; }
+/*----------Navigation Bar-------------*/
+.navbar {
+    /**/ margin-bottom: 0px; 
+}
+
+/*----------End of Navigation Bar-------------*/
+
+/*----------End of CSS for Top Menu----------------*/
+
+
+/*-------------------------------------------------------*/
+/*-------------------Table CSS------------------------------------*/
+
+
+/*Show Results*/
+h1.small-h1 {
+    font-size: 48pt;
+}
+.container-fluid h1, .container h1 {
+    padding-top: 28px;
+}
+.container h1 {
+    color: #414042;
+    font-family: Raleway,sans-serif;
+    font-weight: 100;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    word-wrap: break-word;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+}
+/*Map Separatot*/
+.map-directory-separator { 
+    border-bottom: 4px solid rgb(254, 80, 0); display: block; margin-bottom: 17px; padding-top: 23px; width: 75px; 
+}    
+
+
+/*Save as*/
+
+.custom-select {
+    background-image: url("../images/mapdirectory/arrow-down.svg");
+}
+.custom-select {
+    background-color: #fff;
+    background-position: right 8px center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    content: "";
+}
+body {
+    font-family: Open Sans,sans-serif;
+    font-size: 12pt;
+}
+body {
+    color: #333;
+    line-height: 1.42857;
+}
+
+/*Separator*/
+.margin-bottom-10 {
+    margin-bottom: 10px;
+}
+.separator-small {
+    border-bottom-color: #414042;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    display: block;
+}
+
+
+/* Table header*/
+#tableView .search-results-table-heading > div, .table-view .search-results-table-heading > div {
+    height: 60px;
+}
+
+#tableView .search-results-table-heading, .table-view .search-results-table-heading {
+    color: #414042;
+    font-size: 12pt;
+    line-height: 14pt;
+    text-transform: uppercase;
+}
+
+
+#tableView .search-results-table-heading, .table-view .search-results-table-heading {
+    color: #414042;
+    font-size: 12pt;
+    line-height: 14pt;
+    text-transform: uppercase;
+}
+
+/*Menu Separator*/
+.menu-separator {
+    height: 2px;
+    margin-bottom: 5px;
+}
+.menu-separator {
+    background-color: #fe5000;
+}
+
+
+/*Table Results*/
+.search-results .result-row {
+    font-size: 12pt;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    word-wrap: break-word;
+}
+
+
+/* Tanle separator*/
+#tableView hr, .table-view hr {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+hr {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-bottom-color: -moz-use-text-color;
+    border-bottom-style: none;
+    border-bottom-width: 0;
+    border-image-outset: 0 0 0 0;
+    border-image-repeat: stretch stretch;
+    border-image-slice: 100% 100% 100% 100%;
+    border-image-source: none;
+    border-image-width: 1 1 1 1;
+    border-left-color: -moz-use-text-color;
+    border-left-style: none;
+    border-left-width: 0;
+    border-right-color: -moz-use-text-color;
+    border-right-style: none;
+    border-right-width: 0;
+    border-top-color: #eee;
+    border-top-style: solid;
+    border-top-width: 1px;
+}
+hr {
+    box-sizing: content-box;
+    height: 0;
+}
+hr {
+    -moz-float-edge: margin-box;
+    color: gray;
+    display: block;
+    margin-block-end: 0.5em;
+    margin-block-start: 0.5em;
+    margin-inline-end: auto;
+    margin-inline-start: auto;
+}
+
+
+
+/*-------------------------------------------------------*/
+/*-------------------end of Table CSS------------------------------------*/
+
+
+
+
+
+
+/*-------------------------------------------------------*/
+/*-------------------Gallery CSS------------------------------------*/
+
+.teaser-with-background-image { margin: 0px 0px 30px; text-align: center; }
+.teaser-with-background-image a.external::after, .teaser-with-icon a.external::after { display: none; }
+.teaser-with-background-image .teaser-overlay { background-color: rgba(254, 80, 0, 0.7); height: 150px; transition: all 0.35s ease-in-out 0s; }
+.teaser-with-background-image .teaser-overlay:hover { background-color: rgba(149, 139, 131, 0.5); }
+.teaser-with-background-image .teaser-overlay:hover::before { border-bottom: 30px solid rgb(255, 255, 255); top: 160px; }
+.layoutblock .teaser-with-background-image .teaser-overlay:hover::before { top: 100px; }
+.teaser-with-background-image .teaser-overlay::before { border-width: 20px 20px 30px; border-style: solid; border-color: transparent; content: ""; left: calc(50% - 15px); position: absolute; top: 210px; transition: top 0.35s ease-in-out 0s; }
+.layoutblock .teaser-with-background-image .teaser-overlay::before { top: 150px; }
+.teaser-with-background-image:hover * { opacity: 1; visibility: visible; }
+.teaser-with-background-image .teaser-heading { font-family: Raleway,sans-serif; font-size: 16pt; font-weight: 600; text-transform: uppercase; }
+
+.teaser-caption { color: rgb(255, 255, 255); left: 0px; position: absolute; right: 0px; top: 80px; width: 100%; }
+.layoutblock .teaser-caption { top: 60px; }
+
+.teaser-with-background-image .teaser-caption { position: relative; }
+.teaser-with-background-image .teaser-caption .teaser-heading { font-size: 12pt; }
+
+.teaser-with-background-image .teaser-caption .teaser-heading { font-size: 12pt; }
+
+layoutblock{height: 180px;}
+/*-------------------------------------------------------*/
+/*-------------------Gallery of List CSS------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+/*-------------------------------------------------------- ---------------*/
+/*-------------Page Footer------------------------------------------------*/
+footer .container-footer {
+    padding: 30px 0px;
+}
+
+footer {
+    border-top: 1px solid rgb(254, 80, 0);
+    margin-top: 50px;
+}
+
+.container-footer .block {
+    padding-bottom: 22px;
+    padding-top: 10px;
+}
+.editorialblock img { height: auto; max-width: 100%; }
+.container-footer .editorialblock img { height: auto; max-width: 230px; }
+article ul, aside ul, .container-footer ul { list-style: outside none none; margin: 0px; padding: 0px; }
+
+/*------------------------------------------------------------------------------*/
+/*-------------End of Page Footer-----------------------------------------------*/

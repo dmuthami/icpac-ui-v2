@@ -1,0 +1,135 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 01-Aug-2016, 14:50:42
+    Author     : dmuthami
+*/
+
+#middle{
+    height : 547px;
+    margin-bottom: 50px;
+}
+
+/*--Begining of Directory--*/
+.map-directory{
+    /**/padding: 15px;
+    font-size: 18px;
+    min-height: 300px;
+    /*background-color: rgb(229, 226, 224);*/
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left:  0px;
+}
+
+.start-page-main-content-area > div > :nth-child(2n) { background-color: rgb(229, 226, 224); }
+.layout .main-content-area { display: block; }
+.block { padding: 40px 0px; }
+
+/*Teaser-Icon*/
+.teaser { text-align: center; }
+
+.teaser-with-icon .call-to-action {
+    height: 140px;
+    position: relative;
+}
+
+
+/*----Teaser-Icon---------======================================================================-*/
+/*---Default----------------------*/
+.teaser-with-icon .hexagon-teaser-wrapper {bottom: 0px;left: 0px;position: absolute;right: 0px;}
+.teaser-with-icon * {text-align: center;text-decoration: none;}
+
+.teaser-with-icon .hexagon-teaser-wrapper .hexagon-teaser {
+    background-color: rgb(125, 161, 196);
+    height: 63px;
+    padding: 0px 15px;
+    transition: all 0.35s linear 0s;
+    width: 109.119px;
+}
+.teaser-with-icon .hexagon-teaser-wrapper * {
+    backface-visibility: hidden;
+    margin: 0px auto;
+}
+.teaser-with-icon * {
+    text-align: center;
+    text-decoration: none;
+}
+/*---Before*/
+.teaser-with-icon .hexagon-teaser-wrapper .hexagon-teaser-before {
+    border-bottom: 31.5px solid rgb(125, 161, 196);
+    bottom: 100%;
+    width: 0px;
+}
+.teaser-with-icon .hexagon-teaser-wrapper .hexagon-teaser-before, .teaser-with-icon .hexagon-teaser-wrapper .hexagon-teaser-after {
+    border-left: 54.5595px solid transparent;
+    border-right: 54.5595px solid transparent;
+    transition: all 0.35s linear 0s;
+}
+.teaser-with-icon .hexagon-teaser-wrapper * {
+    backface-visibility: hidden;
+    margin: 0px auto;
+}
+.teaser-with-icon * {
+    text-align: center;
+    text-decoration: none;
+}
+
+/** After**/
+.teaser-with-icon .hexagon-teaser-wrapper .hexagon-teaser-after {
+    border-top: 31.5px solid rgb(125, 161, 196);
+    top: 100%;
+    width: 0px;
+}
+.teaser-with-icon .hexagon-teaser-wrapper .hexagon-teaser-before, .teaser-with-icon .hexagon-teaser-wrapper .hexagon-teaser-after {
+    border-left: 54.5595px solid transparent;
+    border-right: 54.5595px solid transparent;
+    transition: all 0.35s linear 0s;
+}
+.teaser-with-icon .hexagon-teaser-wrapper * {
+    backface-visibility: hidden;
+    margin: 0px auto;
+}
+.teaser-with-icon * {
+    text-align: center;
+    text-decoration: none;
+}
+
+.teaser-with-icon .teaser-heading {
+    color: rgb(93, 71, 119);
+    font-family: "Raleway",sans-serif;
+    font-size: 18pt;
+    font-weight: 400;
+    height: 80px;
+    line-height: 20pt;
+    padding-top: 25px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.teaser-with-icon .teaser-heading .header-content {
+    bottom: 0px;
+    left: 0px;
+    position: absolute;
+    right: 0px;
+}
+
+.teaser-with-icon .separator-small {
+    border-bottom: 1px solid rgb(254, 80, 0);
+    display: block;
+    margin: 0px auto 10px;
+    padding-top: 11px;
+    width: 50px;
+}
+
+.teaser-with-icon .teaser-text {
+    font-family: "Open Sans",sans-serif;
+    font-size: 14pt;
+    line-height: 22pt;
+}
+/*----End of Teaser-Icon-----=======================---*/
+
+/*--End of Begining of Directory--*/
