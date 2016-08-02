@@ -202,7 +202,7 @@ function galleryDisplayMode() {
 
     str = createGalleryBlock("Map hewn and treasured recreation areas", "images/mapdirectory/thumbnail_025.dat", "#");
     $("#idGallery").append(str);
-    str = createGalleryBlock("Main fairway and biledelig", "images/mapdirectory/thumbnail_026.dat", "#");
+    str = createGalleryBlock("Main fairway ", "images/mapdirectory/thumbnail_026.dat", "#");
     $("#idGallery").append(str);
     str = createGalleryBlock("Gravel and crushed", "images/mapdirectory/thumbnail_027.dat", "#");
     $("#idGallery").append(str);
@@ -250,9 +250,9 @@ function listDisplayMode() {
             {"listView":
                 [
                     {"iconPath": "images/mapdirectory/971040238_kv_logo100.png"},
-                    {"searchResultsName": "Administrative Units Norway"},
+                    {"searchResultsName": "Administrative Units Kenya"},
                     {"searchResultsDescriptionTitle": "Mapping Authority"},
-                    {"searchResultsDescriptionText": "Administrative units Norway shows national, county and municipal " +
+                    {"searchResultsDescriptionText": "Administrative units Kenya shows national, county and municipal " +
                         "subdivision in the country with the most accurate boundaries recorded digitally and collected in a single data set. " +
                         "The data set contains the administrative units nation, county and municipality, ..."},
                     {"format": "<span class='label label-datasett' title='Available as Dataset'>Dataset</span>"},
@@ -307,19 +307,19 @@ function createListBlock(listBlockParams) {
             "                            <div class='col-xs-2 search-results-action-buttons'>" +
             "                                <a class='btn btn-default' title='' data-placement='bottom' data-toggle='tooltip' " +
             "                                   href='#' " +
-            "                                   data-original-title='Read more about Administrative units Norway'>" +
+            "                                   data-original-title='Read more about Administrative units Kenya'>" +
             "                                    <span class='custom-icon custom-icon-info'></span>" +
             "                                    <span class='button-text'> Read More</span>" +
             "                                </a>" +
             "                                <a class='btn btn-default' target='_top' title='' data-placement='bottom' data-toggle='tooltip' " +
             "                                   onclick='ga('send', 'event', 'Nedlasting', 'viskart');' " +
-            "                                   href='#' data-original-title='View Administrative units Norway in map'>" +
+            "                                   href='#' data-original-title='View Administrative units Kenya in map'>" +
             "                                    <span class='custom-icon custom-icon-kartmarkoer'></span>" +
             "                                    <span class='button-text'> Show in Map</span>" +
             "                                </a>" +
             "                                <a class='btn btn-default' target='_top' title='' data-placement='bottom' data-toggle='tooltip' " +
             "                                   onclick='ga('send', 'event', 'Nedlasting', 'lastned');' " +
-            "                                   href='#' data-original-title='Download data for Administrative units Norway'>" +
+            "                                   href='#' data-original-title='Download data for Administrative units Kenya'>" +
             "                                    <span class='custom-icon custom-icon-lastned'></span>" +
             "                                    <span class='button-text'> Download</span>" +
             "                                </a>" +

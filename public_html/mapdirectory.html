@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Browse Maps | ICPAC</title>
+
+        <!-- core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/prettyPhoto.css" rel="stylesheet">
+        <link href="css/animate.min.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link href="css/responsive.css" rel="stylesheet">
+        <link href="css/mapdirectory.css" rel="stylesheet" type="text/css"/>
+        <link href="css/mapdirectorylist.css" rel="stylesheet" type="text/css"/>
+        
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->       
+        <link rel="shortcut icon" href="images/ico/favicon.ico">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    </head><!--/head-->
+
+    <body>
+
+        <header id="header">
+            <div class="top-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-4">
+                            <div class="top-number"><p><i class="fa fa-phone-square"></i> +254 724 872 300</p></div>
+                        </div>
+                        <div class="col-sm-6 col-xs-8">
+                            <div class="social">
+                                <ul class="social-share">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
+                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                                </ul>
+                                <div class="search">
+                                    <form role="form">
+                                        <input type="text" class="search-form" autocomplete="off" placeholder="Search">
+                                        <i class="fa fa-search"></i>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.container-->
+            </div><!--/.top-bar-->
+
+            <nav class="navbar navbar-inverse" role="banner">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html"><img src="images/IGAD_Logo_v2.svg" alt="logo"></a>
+                    </div>
+
+                    <div class="collapse navbar-collapse navbar-right">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="mapdirectory.html"><span class="glyphicon glyphicon-book"></span> Browse Maps</a></li>
+                            <li><a href="newmapviewer/index.html"> <span class="glyphicon glyphicon-globe"></span> Map Viewer</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Log in</a></li>                        
+                        </ul>
+                    </div>
+                </div><!--/.container-->
+            </nav><!--/nav-->
+
+        </header><!--/header-->
+
+        <section id="feature" class="transparent-bg">
+            
+        <!-- ----------------------Table tags--------------------- -->
+        <!-- ----------------------------------------------------- -->
+        <!-- ----------------------------------------------------- -->
+
+        <!-- First Row-->
+        <div class="container">
+            <div class ="row">
+                <div class="col-xs-12 ">
+                    <h1 class="small-h1">Browse Maps</h1>                    
+                </div>
+                <div class="col-xs-1">
+                    <div class="map-directory-separator"></div>                   
+                </div>
+            </div>   
+        </div>
+        <!-- End First Row-->
+
+        <!-- Second Row-->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            Showing 1-30 of 2906 results:                           
+                        </div>
+                    </div>                    
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <ul class="pagination">
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                            </ul>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="col-xs-4">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            Save As:                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <div class="col-xs-5">
+                                    <div class="custom-select">
+                                        <select class="form-control" onchange="additionalView(this.value)">
+                                            <option selected="selected" value="csvUrl">CSV</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="row">
+                        <div class="col-xs-12 col-xs-offset-3">
+                            Select Display Mode                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-9 col-xs-offset-3">
+                            <form role="form">
+                                <div class="form-group">
+                                    <select class="form-control" id="idSelectDisplayMode" onchange="selectDisplayMode(this.value)">
+                                        <option>List</option>
+                                        <option>Table</option>
+                                        <option>Gallery</option>
+                                    </select>                                
+                                </div>
+                            </form>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+            <span class="separator-small separator-gray margin-bottom-10"></span>
+        </div>
+        <!-- End Second Row-->
+
+        <div id="mainContainer" class="container">
+
+            <div id="tableView" class="row search-results">
+                <!-- Add table, Gallery, List of Divs programmatically added here-->
+
+
+
+
+
+                <!-- End of Add table, Gallery, List of Divs programmatically-->
+                <div class="col-xs-3">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            Filter  
+                        </div>   
+                    </div>
+
+                    <!-- By Theme-->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <div class="col-xs-2">
+                                    e<span id="idFilterBytheme"  class="glyphicon glyphicon-triangle-right" data-toggle="collapse" data-target="#idTheme"></span>
+                                </div>
+                                <div class="col-xs-3">
+                                    Theme
+                                </div>
+                                <!--<div class="col-xs-6"></div> -->
+                            </div>
+                            <div class="row">
+                                <div id="idTheme" class="collapse col-xs-offset-3">
+                                    <p>&nbsp;&nbsp;&nbsp;Other (1)</p>
+                                    <p>&nbsp;&nbsp;&nbsp;Basic geodata (2)</p>
+                                    <p>&nbsp;&nbsp;&nbsp;Coast / fisheries (1)</p>
+                                </div>   
+                            </div>
+                        </div> 
+                    </div>
+                    <!-- By Type-->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <div class="col-xs-2">
+                                    <span id="idFilterByType"  class="glyphicon glyphicon-triangle-right" data-toggle="collapse" data-target="#idType"></span>
+                                </div>
+                                <div class="col-xs-3">
+                                    Type
+                                </div>
+                                <!--<div class="col-xs-6"></div> -->
+                            </div>
+                            <div class="row">
+                                <div id="idType" class="collapse col-xs-offset-3">
+                                    <p>&nbsp;&nbsp;&nbsp; Shapefile (1)</p>
+                                    <p>&nbsp;&nbsp;&nbsp; Tiff (2)</p>
+                                    <p>&nbsp;&nbsp;&nbsp; SQL (1)</p>
+                                </div>   
+                            </div>
+                        </div> 
+                    </div>   
+
+                </div>  
+            </div>
+            <hr>
+
+            <!-- Pagination -->
+            <div class="row">
+                <div class="col-xs-12">
+                    Showing 1-30 of 2906 results:                           
+                </div>
+            </div>                    
+            
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="pagination">
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                    </ul>
+                </div>
+            </div>                    
+
+            <!-- End of Table tags------------------------------------ -->
+            <!-- ----------------------------------------------------- -->
+            <!-- ----------------------------------------------------- -->
+        </section><!--/#feature-->
+
+        <footer id="footer" class="midnight-blue">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        &copy; 2016 <a target="_blank" href="http://icpac.net/" title="ICPAC">ICPAC Geoportal</a>. All Rights Reserved.
+                    </div>
+                    <div class="col-sm-6">
+                        <ul class="pull-right">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Faq</a></li>
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer><!--/#footer-->
+        <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script>
+
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.prettyPhoto.js"></script>
+        <script src="js/jquery.isotope.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/mapdirectory.js" type="text/javascript"></script>
+    </body>
+</html>

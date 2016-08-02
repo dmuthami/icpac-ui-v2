@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta name="description" content="ICPAC map viewer">
+        <meta name="author" content="david" >
+        <title>ICPAC | Map Viewer</title>
+        <link rel="stylesheet" href="assets/css/ol.css" />
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+        <!--<link href="css/font-awesome.min.css" rel="stylesheet">-->
+        <link href="css/animate.min.css" rel="stylesheet">
+        <link href="css/prettyPhoto.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link href="css/responsive.css" rel="stylesheet">
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]--> 
+
+        <link href="css/styles.css" rel="stylesheet">
+
+
+
+        <script type="text/javascript" src="assets/js/ol.js"></script>
+        <script type="text/javascript" src="assets/js/layerswitchercontrol.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="js/jquery.prettyPhoto.js"></script>
+        <script src="js/jquery.isotope.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/wow.min.js"></script>
+
+
+        <script type="text/javascript">
+            var map;
+            var baseLayers;
+            function applyMargins() {
+                var leftToggler = $(".mini-submenu-left");
+                if (leftToggler.is(":visible")) {
+                    $("#map .ol-zoom")
+                            .css("margin-left", 0)
+                            .removeClass("zoom-top-opened-sidebar")
+                            .addClass("zoom-top-collapsed");
+                } else {
+                    $("#map .ol-zoom")
+                            .css("margin-left", $(".sidebar-left").width())
+                            .removeClass("zoom-top-opened-sidebar")
+                            .removeClass("zoom-top-collapsed");
+                }
+            }
+
+            function isConstrained() {
+                return $(".sidebar").width() == $(window).width();
+            }
+
+            function applyInitialUIState() {
+                if (isConstrained()) {
+                    $(".sidebar-left .sidebar-body").fadeOut('slide');
+                    $('.mini-submenu-left').fadeIn();
+                }
+            }
+
+
+
+
+            $(function () {
+                $('.sidebar-left .slide-submenu').on('click', function () {
+                    var thisEl = $(this);
+                    thisEl.closest('.sidebar-body').fadeOut('slide', function () {
+                        $('.mini-submenu-left').fadeIn();
+                        applyMargins();
+                    });
+                });
+
+                $('.mini-submenu-left').on('click', function () {
+                    var thisEl = $(this);
+                    $('.sidebar-left .sidebar-body').toggle('slide');
+                    thisEl.hide();
+                    applyMargins();
+                });
+
+                $(window).on("resize", applyMargins);
+
+
+                // from local geoserver
+                var imageWMS = new ol.layer.Tile({
+                    source: new ol.source.TileWMS({
+                        url: 'http://localhost:8080/geoserver/wms',
+                        params: {'FORMAT': 'image/png',
+                            'VERSION': '1.1.1',
+                            tiled: true,
+                            LAYERS: 'spearfish',
+                            STYLES: '',
+                        }
+                    })
+                });
+
+
+
+                // check if  radio checked 
+                var baselayer = osm;// by default
+
+
+
+                var osm = new ol.layer.Tile(
+                        {title: "OSM",
+                            baseLayer: true,
+                            source: new ol.source.OSM(),
+                            visible: true
+                        });
+
+
+                var esri = new ol.layer.Tile({
+                    visible: false,
+                    baseLayer: true,
+                    source: new ol.source.XYZ({
+                        attributions: [new ol.Attribution({
+                                html: 'Tiles &copy; <a href="http://services.arcgisonline.com/ArcGIS/' +
+                                        'rest/services/World_Topo_Map/MapServer">ArcGIS</a>'
+                            })],
+                        projection: 'EPSG:3857',
+                        url: 'http://server.arcgisonline.com/ArcGIS/rest/services/' +
+                                'World_Topo_Map/MapServer/tile/{z}/{y}/{x}'
+                    })
+                });
+
+
+                var stamen = new ol.layer.Tile(
+                        {title: "Toner",
+                            baseLayer: true,
+                            visible: false,
+                            source: new ol.source.Stamen({
+                                layer: 'toner'
+                            })
+                        });
+
+
+                baseLayers = new ol.layer.Group(
+                        {layers: [osm, esri, stamen]
+
+                        });
+
+
+                var mylayers = new ol.layer.Group({
+                    layers: [
+                        new ol.layer.Tile({
+                            source: new ol.source.TileJSON({
+                                url: 'http://api.tiles.mapbox.com/v3/' +
+                                        'mapbox.20110804-hoa-foodinsecurity-3month.json',
+                                crossOrigin: 'anonymous'
+                            })
+                        }),
+                        new ol.layer.Heatmap({
+                            source: new ol.source.GeoJSON({
+                                url: 'data/world_cities.json',
+                                projection: 'EPSG:3857'
+                            }),
+                            opacity: 0.9
+                        }),
+                        imageWMS
+
+                    ]
+                });
+
+                map = new ol.Map({
+                    target: "map",
+                    controls: ol.control.defaults().extend
+                            ([// Add a new Layerswitcher to the map
+                                new ol.control.LayerSwitcher()
+                            ]),
+                    layers: [
+                        baseLayers, mylayers
+                    ],
+                    view: new ol.View({
+                        center: [0, 37],
+                        zoom: 2
+                    })
+                });
+
+
+                $('input[name="basemapx"]').on('change', function (e) {
+
+                    if (this.value == "stamen") {
+                        stamen.setVisible(true);
+                        osm.setVisible(false);
+                        esri.setVisible(false);
+
+                    } else if (this.value == "esri") {
+
+                        esri.setVisible(true);
+                        osm.setVisible(false);
+                        stamen.setVisible(false);
+                    } else {
+                        esri.setVisible(false);
+                        osm.setVisible(true);
+                        stamen.setVisible(false);
+
+                    }
+
+                });
+
+
+
+                applyInitialUIState();
+                applyMargins();
+
+
+
+                function bindInputs(layerid, layer) {
+                    var visibilityInput = $(layerid + ' input.visible');
+                    visibilityInput.on('change', function () {
+                        layer.setVisible(this.checked);
+                        // Zoom to layer;
+                        //var extent = layer.getExtent();
+                        //map.getView().fit(extent, map.getSize());
+                    });
+                    visibilityInput.prop('checked', layer.getVisible());
+
+                    var opacityInput = $(layerid + ' input.opacity');
+                    opacityInput.on('input change', function () {
+                        layer.setOpacity(parseFloat(this.value));
+                    });
+                    opacityInput.val(String(layer.getOpacity()));
+                }
+
+
+                map.getLayers().forEach(function (layer, i) {
+                    bindInputs('#layer' + i, layer);
+                    if (layer instanceof ol.layer.Group) {
+                        layer.getLayers().forEach(function (sublayer, j) {
+                            bindInputs('#layer' + i + j, sublayer);
+                        });
+                    }
+                });
+
+
+                $('#layertree li > span').click(function () {
+                    $(this).siblings('fieldset').toggle();
+                }).siblings('fieldset').hide();
+
+
+
+
+
+
+
+
+
+
+
+            });//doc ready
+
+
+
+
+
+
+
+
+        </script>
+    </head>
+    <body class="homepage">
+
+        <div class="container">
+            <nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+
+                    <nav class="navbar navbar-inverse" role="banner">
+
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="//icpac.net"> <img src="images/logo.png" alt="logo"> ICPAC Map Viewer</a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">Map Viewer</a></li>
+                                <li><a href="../index.html">Geoportal Home</a></li>
+
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Download <i class="fa fa-angle-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Shapefile</a></li>
+                                        <li><a href="#">KML</a></li>
+                                        <li><a href="#">GeoJSON</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">GEOTIFF</a></li>  
+
+                                    </ul>
+                                </li>
+
+
+                                <li><a href="#">Login</a></li> 
+
+                                <li>                     
+                                    <ul class="social-share">
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
+                                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                                    </ul>
+                                </li>
+                                <li> <div class="search">
+                                        <form role="form">
+                                            <input type="text" class="search-form" autocomplete="off" placeholder="Search">
+                                            <i class="fa fa-search"></i>
+                                        </form>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+
+                        </div><!-- /.navbar-collapse -->
+                    </nav> 
+                </div><!-- /.container-fluid -->
+            </nav> 
+
+        </div>
+    </header><!--/header-->
+
+
+    <div class="navbar-offset"></div>
+    <div id="map">
+    </div>
+    <div class="row main-row">
+        <div class="col-sm-4 col-md-3 sidebar sidebar-left pull-left">
+            <div class="panel-group sidebar-body" id="accordion-left">
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" href="#maplayers">
+                                <i class="fa fa-list-alt"></i>
+                                Map layers
+                            </a>
+                            <span class="pull-right slide-submenu">
+                                <i class="fa fa-chevron-left"></i>
+                            </span>
+                        </h4>
+                    </div>
+                    <div id="maplayers" class="panel-collapse collapse in">
+
+                        <div class="panel-body">
+                            <div id="layertree">
+
+
+
+                                <ol>
+                                    <li class="list-group-item"><span>Food insecurity layer</span>
+                                        <fieldset id="layer10">
+                                            <label class="checkbox" for="visible10">
+                                                <input id="visible10" class="visible" type="checkbox"/>visibility
+                                            </label>
+                                            <label>opacity</label>
+                                            <input class="opacity" type="range" min="0" max="1" step="0.01"/>
+                                        </fieldset>
+                                    </li>
+                                    <li class="list-group-item"><span>Heat Map</span>
+                                        <fieldset id="layer11">
+                                            <label class="checkbox" for="visible11">
+                                                <input id="visible11" class="visible" type="checkbox"/>visibility
+                                            </label>
+                                            <label>opacity</label>
+                                            <input class="opacity" type="range" min="0" max="1" step="0.01"/>
+                                        </fieldset>
+                                    </li>
+
+                                    <li class="list-group-item"><span>My Image Layer</span>
+                                        <fieldset id="layer12">
+                                            <label class="checkbox" for="visible12">
+                                                <input id="visible12" class="visible" type="checkbox"/>visibility
+                                            </label>
+                                            <label>opacity</label>
+                                            <input class="opacity" type="range" min="0" max="1" step="0.01"/>
+                                        </fieldset>
+                                    </li>
+
+                                </ol>
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div> 
+
+
+
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" href="#Basemaps">
+                                <i class="fa fa-list-alt"></i>
+                                Base Maps                  </a>
+                            <span class="pull-right slide-submenu">
+                                <i class="fa fa-chevron-left"></i>
+                            </span>
+                        </h4>
+                    </div>
+                    <div id="Basemaps" class="panel-collapse collapse in">
+                        <div class="panel-body list-group">
+                            <a href="#" class="list-group-item">
+                                <input type="radio"class ="radio-single"  name="basemapx" value="osm" checked> OSM<br> </a>
+                            <a href="#" class="list-group-item">
+                                <input type="radio"class ="radio-single"  name="basemapx" value="esri" > ESRI<br> </a>
+                            <a href="#" class="list-group-item">
+                                <input type="radio"class ="radio-single"  name="basemapx" value="stamen" > STAMEN<br> </a>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="mini-submenu mini-submenu-left pull-left">
+        <i class="fa fa-list-alt"></i>
+    </div>
+
+</div>
+
+
+</body>
+</html>
